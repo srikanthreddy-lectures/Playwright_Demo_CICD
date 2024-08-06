@@ -21,7 +21,7 @@ steps:
 - checkout: self
 
 - script: |
-   npm ci
+   npm install
   displayName: "NPM Install"
 
 - script: |
