@@ -13,7 +13,7 @@ test.describe('Blog Post Functionality with Mocked API', () => {
   });
 //Test
    test('Check Login', async ({ page }) => {
-      await expect(page.getByText("viewed your profile")).toBeVisible();
+      await expect(page.getByText("Test Demo")).toBeVisible();
     
     });
     
