@@ -12,6 +12,17 @@ pool:
   - agent.name -equals skr_pool
 
 steps:
+- script: |
+   sudo apt-get install openjdk-17-jdk  
+  displayName: "Installing JDK 17"
+
+- task: JavaToolInstaller@0
+  displayName: Using JDK 17
+  inputs:
+    versionSpec: "17"
+    jdkArchitectureOption: x64
+    jdkSourceOption: "PreInstalled"
+
 - task: NodeTool@0
   inputs:
     versionSpec: '16.x'
