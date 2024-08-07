@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "@playwright/test": "^1.45.3",
-    "allure-playwright":"^2.27.0"
+    "allure-playwright":"^2.15.1"
   }
 }
