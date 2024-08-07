@@ -13,18 +13,10 @@ pool:
 
 steps:
 
-- script: |
-    which java
-    java -version
-    echo JAVA_HOME_17_x64=$JAVA_HOME_17_x64
-    echo JAVA_HOME=$JAVA_HOME
-    javac
-  displayName: "Show Release Number"
-
 - task: JavaToolInstaller@0
   inputs:
-    versionSpec: '8'
-    jdkArchitectureOption: 'x86'
+    versionSpec: '17'
+    jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled'
 
 - task: NodeTool@0
