@@ -12,6 +12,10 @@ test.describe('Blog Post Functionality with Mocked API', () => {
     await page.locator('button:text("LOGIN")').click();
   });
 
+    test('Check Login', async ({ page }) => {
+      await expect(page.getByText("viewed your profile")).toBeVisible();
+    
+    });
   test('should allow a user to add a post and see it in the list', async ({ page }) => {
  
      const mockPost= {
