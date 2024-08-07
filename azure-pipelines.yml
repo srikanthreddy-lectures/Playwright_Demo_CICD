@@ -35,6 +35,12 @@ steps:
   displayName: "Run Playwright Tests"
   continueOnError: true
 
+- task: PublishAllureReport@1
+  displayName: Publish Report
+  inputs:
+    allureVersion: 2.27.0
+    testResultsDir: '$(Pipeline.Workspace)/s/allure-results'
+    
 - task: ArchiveFiles@2
   displayName: 'Add playwright-report to Archive'
   inputs:
