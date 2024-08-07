@@ -40,10 +40,6 @@ steps:
   displayName: 'Use Allure reports'
   continueOnError: true
 
-- script: npx allure generate ./allure-results --clean
-  displayName: 'Generate Allure reports and clean'
-  continueOnError: true
-
 - task: PublishAllureReport@1
   displayName: Publish Report
   inputs:
