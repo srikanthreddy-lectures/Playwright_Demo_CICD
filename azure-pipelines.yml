@@ -35,11 +35,20 @@ steps:
   displayName: "Run Playwright Tests"
   continueOnError: true
 
+- script: npx playwright test --reporter=line,allure-playwright
+  displayName: 'Use Allure reports'
+  continueOnError: true
+
+- script: npx allure generate ./allure-results --clean
+  displayName: 'Generate Allure reports and clean'
+  continueOnError: true
+
 - task: PublishAllureReport@1
   displayName: Publish Report
   inputs:
     allureVersion: 2.27.0
     testResultsDir: allure-results
+  continueOnError: true
     
 - task: ArchiveFiles@2
   displayName: 'Add playwright-report to Archive'
