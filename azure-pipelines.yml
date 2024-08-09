@@ -36,7 +36,7 @@ steps:
   displayName: "Run Playwright Tests"
   continueOnError: true
 
-- script: npx playwright test --reporter=line,allure-playwright
+- script: npx playwright test --grep "@fast|@slow" --reporter=line,allure-playwright
   displayName: 'Use Allure reports'
   continueOnError: true
 
