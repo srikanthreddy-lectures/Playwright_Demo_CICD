@@ -36,8 +36,10 @@ steps:
   displayName: "Run Playwright Tests"
   continueOnError: true
 
-- script: npx playwright test --grep "@fast|@slow" --reporter=line,allure-playwright
-  displayName: 'Use Allure reports'
+- script: |
+    TAGS=$(node -pe "JSON.parse(require('fs').readFileSync('config.json', 'utf8')).tags")
+    npx playwright test --grep "$TAGS" --reporter=line,allure-playwright
+  displayName: 'Run Playwright Tests With Dynamic Tags (Direct Injection)'
   continueOnError: true
 
 - task: PublishAllureReport@1
